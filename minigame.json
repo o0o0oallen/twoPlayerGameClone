@@ -1,7 +1,7 @@
 {
   "gameName": "two-player-games",
   "platform": "minigame",
-  "sdk": "https://sdk.minigame.vip/js/1.0/minigame-sdk.js",
+  "sdk": "minigame-sdk.js",
   "instance": "FBInstant",
   "features": {
     "ads": {
