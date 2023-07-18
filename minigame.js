@@ -512,7 +512,7 @@
 			return o.showInterstitialAd().then(() => Promise.resolve()).catch(e => Promise.reject(e))
 		}
 		showRewardedVideo() {
-			return o.showRewardedVideo().then(() => Promise.resolve()).catch(e => Promise.reject(e))
+			return /*o.showRewardedVideo().then(() => Promise.resolve()).catch(e => Promise.reject(e))*/Promise.resolve();
 		}
 		showBanner() {
 			return this._isBannerEnabled ? o.showBannerAsync().then(() => Promise.resolve()).catch(e => Promise.reject(e)) : (console.info("banner is disable"), Promise.resolve())
