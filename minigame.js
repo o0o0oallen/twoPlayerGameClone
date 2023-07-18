@@ -523,7 +523,7 @@
 			return this._isBannerEnabled ? o.hideBannerAsync().then(() => Promise.resolve()).catch(e => Promise.reject(e)) : (console.info("banner is disable"), Promise.resolve())
 		}
 		isRewardvideoReady() {
-			return o.isRewardedVideoReady()
+			return true;
 		}
 		isInterstitialReady() {
 			return o.isInterstitialAdReady()
