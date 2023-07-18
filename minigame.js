@@ -428,7 +428,8 @@
 			return this._isAdReady(n.REWARDED_VIDEO)
 		}
 		static showRewardedVideo() {
-			return c(this, void 0, void 0, function* () {
+			console.log("run ads")
+			return c(this, void 0, void 0, function* () {				
 				return yield this._showAsync(n.REWARDED_VIDEO)
 			})
 		}
