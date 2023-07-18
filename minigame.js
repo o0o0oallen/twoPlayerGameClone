@@ -219,12 +219,18 @@
 			return c(this, void 0, void 0, function* () {
 				if (null === this._adInstance) {
 					if (this._state !== a.NONE) throw console.log("Ad Instance is still creating: " + this.getInfo()), F;
-					this._state = a.NEW, console.log("Get Ad Instance: " + this.getInfo()), this._adInstance = yield this.createAdInstanceAsync(this._adId)
+					this._state = a.NEW,
+					console.log("Get Ad Instance: " + this.getInfo()),
+					this._adInstance = yield this.createAdInstanceAsync(this._adId)
 				}
-				if (this._state !== a.NEW) throw console.log("Not ready for preload: " + this.getInfo()), this._state === a.LOADING ? (console.log("Ad is loading, do not reload" + this.getInfo()), W) : G;
+				if (this._state !== a.NEW) throw console.log("Not ready for preload: " + this.getInfo()),
+					this._state === a.LOADING ? (console.log("Ad is loading, do not reload" + this.getInfo()), W) : G;
 				if (this.isErrorTooMany()) throw console.log("Too many errors, stop loading: " + this.getInfo()), X;
 				try {
-					return this._state = a.LOADING, console.log("Start Loading: " + this.getInfo()), yield this._adInstance.loadAsync(), this._state = a.LOADED, this.resetErrorCounter(), console.log("Loading Success: " + this.getInfo()), !0
+					return this._state = a.LOADING,
+						console.log("Start Loading: " + this.getInfo()),
+						yield this._adInstance.loadAsync(), this._state = a.LOADED,
+						this.resetErrorCounter(), console.log("Loading Success: " + this.getInfo()), !0
 				} catch (e) {
 					var t;
 					throw console.info("Loading Failed: " + this.getInfo(), e), e.code === J ? (console.info("Ads Not Fill, stop loading: " + this.getInfo()), this.setFatalError()) : (this.increaseErrorCounter(), this._state = a.NEW, t = 10 * this._errorCounter + 1, console.log("Reload after " + t + " seconds: " + this.getInfo()), this.safeReLoadAsync(t)), e
@@ -3506,7 +3512,8 @@ digest: ` + r, "HMACSHA512-SecretKey")),
 				if (console.info("minigame loader inited..."), !t.features || !t.features.ads) return console.info("missing features or missing ads"), Promise.reject({
 					message: "missing features or missing ads"
 				});
-				t.platform !== oi.MATCH && (ae.load(t.features.ads), window.MiniGameAds = ae, window.MinigameAds = ae);
+				return /*window.Analytics = ai, window.MiniGameAnalytics = ai,*/ Promise.resolve()
+				/*t.platform !== oi.MATCH && (ae.load(t.features.ads), window.MiniGameAds = ae, window.MinigameAds = ae);
 				var {
 					features: e,
 					platform: r
@@ -3524,7 +3531,7 @@ digest: ` + r, "HMACSHA512-SecretKey")),
 				} catch (e) {
 					console.error("MiniGameAnalytics init fail: ", e)
 				}
-				return window.Analytics = ai, window.MiniGameAnalytics = ai, Promise.resolve()
+				return window.Analytics = ai, window.MiniGameAnalytics = ai, Promise.resolve()*/
 			})
 		},
 		setLoadingProgress: function (e) {
