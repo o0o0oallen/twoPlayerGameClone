@@ -513,6 +513,7 @@
 			return o.showInterstitialAd().then(() => Promise.resolve()).catch(e => Promise.reject(e))
 		}
 		showRewardedVideo() {
+			console.log("run ads")
 			return /*o.showRewardedVideo().then(() => Promise.resolve()).catch(e => Promise.reject(e))*/Promise.resolve();
 		}
 		showBanner() {
